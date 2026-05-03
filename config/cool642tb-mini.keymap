@@ -50,8 +50,36 @@
         macro02: macro02 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none>;
+            bindings = <&kp LS(C) &kp LS(S) &kp LS(M) &kp LS(S)>;
             label = "MACRO02";
+        };
+
+        macro03: macro03 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(M) &kp E &kp D &kp LS(T) &kp E &kp C &kp H>;
+            label = "MACRO03";
+        };
+
+        macro04: macro04 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(A) &kp LS(S) &kp SPACE &kp LS(C) &kp O &kp N &kp N &kp E &kp C &kp T>;
+            label = "MACRO04";
+        };
+
+        macro05: macro05 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(S) &kp LS(H) &kp LS(D) &kp SPACE &kp LS(E) &kp C &kp H &kp O &kp SPACE &kp LS(L) &kp A &kp B &kp PERIOD>;
+            label = "MACRO05";
+        };
+
+        macro06: macro06 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp KP_NUMBER_1 &kp O &kp N &kp KP_NUMBER_1>;
+            label = "MACRO06";
         };
     };
 
