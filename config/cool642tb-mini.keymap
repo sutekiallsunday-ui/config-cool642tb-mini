@@ -17,14 +17,14 @@
     combos {
         compatible = "zmk,combos";
 
-        shift_tab {
-            bindings = <&kp LANG2>;
-            key-positions = <12 13>;
+        lang {
+            bindings = <&kp DELETE>;
+            key-positions = <19 18>;
         };
 
-        lang {
-            bindings = <&kp LANG1>;
-            key-positions = <18 19>;
+        hennkan {
+            bindings = <&kp LANGUAGE_5>;
+            key-positions = <39 40>;
         };
     };
 
