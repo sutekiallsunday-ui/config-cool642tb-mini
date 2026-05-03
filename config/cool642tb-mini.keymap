@@ -1,8 +1,5 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 150
 
-#include <dt-bindings/zmk/input_transform.h>
-#include <input/processors.dtsi>
-#include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
@@ -51,34 +48,10 @@
     require-prior-idle-ms = <200>;
 };
 
-/ {
-    input_processors {
-        zip_wheel_scaler: zip_wheel_scaler {
-            compatible = "zmk,input-processor-scaler";
-            #input-processor-cells = <2>;
-            type = <INPUT_EV_REL>;
-            codes = <INPUT_REL_WHEEL>;
-            track-remainders;
-        };
-    };
-};
-
-&msc_input_listener {
-    speed_up {
-        layers = <FUNCTION>;
-        input-processors = <&zip_wheel_scaler 3 1>; //スクロールを3倍速にする
-    };
-};
-
-&trackball_listener {
-    scroller {
-        layers = <SCROLL>;
-        input-processors =
-            <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転
-            <&zip_xy_to_scroll_mapper>;
-    };
-};
+// NOTE: cool642tb-mini には `trackball_listener` / `msc_input_listener` ノードが
+// 定義されていないため、LiNEA40 にあったリスナー上書きは削除しました。
+// もしご利用のシールド側に該当ノード（例: &xiao_pd_pim447 等）がある場合は、
+// その正しいラベル名に書き換えて再追加してください。
 
 / {
     combos {
