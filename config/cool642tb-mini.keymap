@@ -39,6 +39,22 @@
         };
     };
 
+    macros {
+        macro01: macro01 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(I) &kp LS(Q) &kp LS(V) &kp LS(I) &kp LS(A)>;
+            label = "MACRO01";
+        };
+
+        macro02: macro02 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "MACRO02";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
