@@ -100,7 +100,7 @@
 
         default_layer {
             bindings = <
-&mt LEFT_ALT Q      &kp W         &kp E        &kp R         &kp T                                        &kp Y          &kp U  &kp I      &kp O    &kp P
+&mt LEFT_ALT Q      &kp W         &kp E        &kp R         &kp T                                        &kp Y          &kp U  &kp I      &kp O    &lt 8 P
 &mt LEFT_SHIFT A    &kp S         &kp D        &lt 3 F       &kp G        &kp LC(Y)      &kp PRINTSCREEN  &kp H          &kp J  &kp K      &kp L    &mt RIGHT_SHIFT MINUS
 &mt LEFT_CONTROL Z  &kp X         &kp C        &kp V         &kp B        &kp LC(Z)      &kp ESC          &kp N          &kp M  &kp COMMA  &kp DOT  &mt LCTRL QUESTION
 &kp ESCAPE          &kp LEFT_GUI  &kp LG(DOT)  &kp LEFT_ALT  &lt 3 SPACE  &lt 2 TAB      &lt 1 ENTER      &kp BACKSPACE                             &lt 6 SLASH
@@ -156,7 +156,7 @@
             >;
         };
 
-        layer_6 {
+        BT {
             bindings = <
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR_ALL
 &trans        &trans        &trans        &trans        &trans        &trans      &trans  &trans        &trans        &trans        &trans        &trans
@@ -165,7 +165,16 @@
             >;
         };
 
-        layer_7 {
+        TB_SCROLL {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+            >;
+        };
+
+        BROWSER {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
