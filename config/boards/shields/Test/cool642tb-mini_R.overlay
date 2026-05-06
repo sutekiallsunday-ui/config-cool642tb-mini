@@ -59,5 +59,11 @@
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         automouse-layer = <4>;
         scroll-layers = <7>;
+
+        browser_nav {
+            layers = <8>;
+            bindings = <&mkp MB5>, <&mkp MB4>, <&none>, <&none>;
+            tick = <80>;
+        };
     };
 };
