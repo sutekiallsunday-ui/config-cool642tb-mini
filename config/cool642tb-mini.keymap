@@ -31,6 +31,13 @@
             bindings = <&kp LANGUAGE_2>;
             key-positions = <38 41>;
         };
+
+        scroll_combo {
+            timeout-ms = <100>;
+            key-positions = <20 21>;
+            bindings = <&mo 7>;
+            slow-release;
+        };
     };
 
     behaviors {
