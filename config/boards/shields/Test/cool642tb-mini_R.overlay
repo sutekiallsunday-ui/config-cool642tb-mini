@@ -64,7 +64,9 @@
         browser_nav {
             layers = <8>;
             bindings = <&mkp MB5>, <&mkp MB4>, <&none>, <&none>;
-            tick = <80>;
+            tick = <400>;
+            wait-ms = <200>;
+            tap-ms = <30>;
         };
     };
 };
