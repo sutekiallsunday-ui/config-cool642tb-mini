@@ -15,6 +15,7 @@
 //   - tap-preferred: tapping-term を超えるまで HOLD にしない
 //   - quick-tap-ms : 直前タップ後の同キー押下を強制タップ
 //   - require-prior-idle-ms: 直前 250ms 以内にキー入力があれば強制タップ
+
 &mt {
     flavor = "tap-preferred";
     tapping-term-ms = <200>;
@@ -27,12 +28,6 @@
 // (SCROLL の Alt+数字、NUM の Ctrl+英字 など) が出力されて
 // IME がローマ字入力に切り替わる現象を防ぐ。
 // 過去にこの値を 200〜250 に上げると症状が消えた実績あり。
-&lt {
-    flavor = "tap-preferred";
-    tapping-term-ms = <200>;
-    quick-tap-ms = <175>;
-    require-prior-idle-ms = <250>;
-};
 
 / {
     combos {
@@ -40,6 +35,7 @@
 
         // J + K → DELETE
         // 直前にキー入力があった場合は発火させない (誤発火防止)
+
         lang {
             bindings = <&kp DELETE>;
             key-positions = <19 18>;
@@ -51,6 +47,7 @@
         // 日本語入力中の TAB / ENTER 連打で誤発火し
         // IME がローマ字直接入力に切り替わる現象を防ぐため、
         // timeout を短くし、直前 200ms キー入力が無い場合のみ発火させる
+
         hennkan {
             bindings = <&kp LANG1>;
             key-positions = <39 40>;
@@ -60,6 +57,7 @@
 
         // SPACE + BACKSPACE → LANGUAGE_2 (かな)
         // 同様に誤発火防止のためガード
+
         Lang2 {
             bindings = <&kp LANGUAGE_2>;
             key-positions = <38 41>;
@@ -70,6 +68,7 @@
         // L + MINUS → BROWSER レイヤー (mo 7)
         // 右手ホームポジションで触れる位置のため、
         // タイピング中の誤発火防止に require-prior-idle-ms を追加
+
         scroll_combo {
             timeout-ms = <100>;
             key-positions = <20 21>;
@@ -139,10 +138,10 @@
 
         default_layer {
             bindings = <
-&mt LEFT_ALT Q      &kp W         &kp E        &kp R         &kp T                                        &kp Y          &kp U  &kp I      &kp O    &lt 8 P
-&mt LEFT_SHIFT A    &kp S         &kp D        &lt 3 F       &kp G        &kp LC(Y)      &kp PRINTSCREEN  &kp H          &kp J  &kp K      &kp L    &mt RIGHT_SHIFT MINUS
-&mt LEFT_CONTROL Z  &kp X         &kp C        &kp V         &kp B        &kp LC(Z)      &kp ESC          &kp N          &kp M  &kp COMMA  &kp DOT  &mt LCTRL QUESTION
-&kp ESCAPE          &kp LEFT_GUI  &kp LG(DOT)  &kp LEFT_ALT  &lt 3 SPACE  &lt 2 TAB      &lt 1 ENTER      &kp BACKSPACE                             &lt 6 SLASH
+&mt LEFT_ALT Q      &kp W         &kp E        &kp R         &kp T                                    &kp Y          &kp U  &kp I      &kp O    &lt 8 P
+&mt LEFT_SHIFT A    &kp S         &kp D        &lt 3 F       &kp G        &kp LC(Y)      &kp H        &kp H          &kp J  &kp K      &kp L    &mt RIGHT_SHIFT MINUS
+&mt LEFT_CONTROL Z  &kp X         &kp C        &kp V         &kp B        &kp LC(Z)      &kp ESC      &kp N          &kp M  &kp COMMA  &kp DOT  &mt LCTRL QUESTION
+&kp ESCAPE          &kp LEFT_GUI  &kp LG(DOT)  &kp LEFT_ALT  &lt 3 SPACE  &lt 2 TAB      &lt 1 ENTER  &kp BACKSPACE                             &lt 6 SLASH
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
