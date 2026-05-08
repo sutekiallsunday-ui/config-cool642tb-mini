@@ -14,12 +14,24 @@
 // 切り替わる現象を防ぐための設定:
 //   - tap-preferred: tapping-term を超えるまで HOLD にしない
 //   - quick-tap-ms : 直前タップ後の同キー押下を強制タップ
-//   - require-prior-idle-ms: 直前 150ms 以内にキー入力があれば強制タップ
+//   - require-prior-idle-ms: 直前 250ms 以内にキー入力があれば強制タップ
 &mt {
     flavor = "tap-preferred";
     tapping-term-ms = <200>;
     quick-tap-ms = <175>;
-    require-prior-idle-ms = <150>;
+    require-prior-idle-ms = <250>;
+};
+
+// layer-tap (&lt 3 SPACE, &lt 2 TAB, &lt 1 ENTER 等) が
+// 高速日本語入力中に HOLD と誤判定され、瞬間的に別レイヤー
+// (SCROLL の Alt+数字、NUM の Ctrl+英字 など) が出力されて
+// IME がローマ字入力に切り替わる現象を防ぐ。
+// 過去にこの値を 200〜250 に上げると症状が消えた実績あり。
+&lt {
+    flavor = "tap-preferred";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <175>;
+    require-prior-idle-ms = <250>;
 };
 
 / {
