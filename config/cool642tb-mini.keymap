@@ -28,6 +28,16 @@
 // (SCROLL の Alt+数字、NUM の Ctrl+英字 など) が出力されて
 // IME がローマ字入力に切り替わる現象を防ぐ。
 // 過去にこの値を 200〜250 に上げると症状が消えた実績あり。
+//
+// 注意: keymap-editor で保存するとこのブロックが削除される
+// ことがあるため、保存後は必ず diff を確認すること。
+
+&lt {
+    flavor = "tap-preferred";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <175>;
+    require-prior-idle-ms = <250>;
+};
 
 / {
     combos {
