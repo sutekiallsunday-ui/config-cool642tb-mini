@@ -32,13 +32,6 @@
 // 注意: keymap-editor で保存するとこのブロックが削除される
 // ことがあるため、保存後は必ず diff を確認すること。
 
-&lt {
-    flavor = "tap-preferred";
-    tapping-term-ms = <200>;
-    quick-tap-ms = <175>;
-    require-prior-idle-ms = <250>;
-};
-
 / {
     combos {
         compatible = "zmk,combos";
@@ -60,7 +53,7 @@
 
         hennkan {
             bindings = <&kp LANG1>;
-            key-positions = <39 40>;
+            key-positions = <6 7>;
             timeout-ms = <35>;
             require-prior-idle-ms = <200>;
         };
@@ -70,7 +63,7 @@
 
         Lang2 {
             bindings = <&kp LANGUAGE_2>;
-            key-positions = <38 41>;
+            key-positions = <2 3>;
             timeout-ms = <35>;
             require-prior-idle-ms = <200>;
         };
