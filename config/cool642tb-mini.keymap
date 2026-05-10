@@ -1,4 +1,4 @@
- #include <behaviors.dtsi>
+#include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
@@ -97,6 +97,22 @@
 
             tap-ms = <20>;
         };
+
+        // TAB 専用の layer-tap。
+        // require-prior-idle-ms = 0 にして連続タイピング直後でも
+        // 200ms 以上ホールドすればすぐにレイヤーに入れるようにする。
+        // tap-preferred + tapping-term-ms = 200 が壁として効くので
+        // 短い「ちょん押し」は確実にタップ (Tab) になり暴発しない。
+
+        lt_tab: lt_tab {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <0>;
+            bindings = <&mo>, <&kp>;
+        };
     };
 
     macros {
@@ -151,7 +167,7 @@
 &mt LEFT_ALT Q      &kp W         &kp E        &kp R         &kp T                                           &kp Y          &kp U  &kp I      &kp O    &lt 8 P
 &mt LEFT_SHIFT A    &kp S         &kp D        &kp F         &kp G        &kp LC(Y)             &kp H        &kp H          &kp J  &kp K      &kp L    &mt RIGHT_SHIFT MINUS
 &mt LEFT_CONTROL Z  &kp X         &kp C        &kp V         &kp B        &kp LEFT_BRACKET      &kp SQT      &kp N          &kp M  &kp COMMA  &kp DOT  &mt LCTRL QUESTION
-&kp ESCAPE          &kp LEFT_GUI  &kp LG(DOT)  &kp LEFT_ALT  &lt 3 SPACE  &lt 2 TAB             &lt 1 ENTER  &kp BACKSPACE                             &lt 6 SLASH
+&kp ESCAPE          &kp LEFT_GUI  &kp LG(DOT)  &kp LEFT_ALT  &lt 3 SPACE  &lt_tab 2 TAB         &lt 1 ENTER  &kp BACKSPACE                             &lt 6 SLASH
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
