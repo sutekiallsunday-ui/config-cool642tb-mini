@@ -186,10 +186,10 @@
 
         NUM {
             bindings = <
-&trans     &kp LS(LG(S))  &kp LS(LC(R))  &kp LC(R)      &trans                             &kp MINUS   &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp RS(SEMICOLON)
-&kp LC(A)  &kp LC(S)      &kp LC(D)      &kp LS(LC(G))  &kp LC(G)  &trans      &kp LS(GT)  &kp PERIOD  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_NUMBER_0
-&kp LC(Z)  &kp LC(X)      &kp LC(C)      &kp LC(V)      &kp LC(B)  &trans      &trans      &kp SLASH   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp LS(SINGLE_QUOTE)
-&trans     &trans         &trans         &trans         &trans     &trans      &trans      &trans                                                         &kp QUESTION
+&trans     &kp LS(LG(S))  &kp LS(LC(R))  &kp LC(R)      &kp LA(F8)                          &kp MINUS   &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp RS(SEMICOLON)
+&kp LC(A)  &kp LC(S)      &kp LC(D)      &kp LS(LC(G))  &kp LC(G)   &trans      &kp LS(GT)  &kp PERIOD  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_NUMBER_0
+&kp LC(Z)  &kp LC(X)      &kp LC(C)      &kp LC(V)      &kp LC(B)   &trans      &trans      &kp SLASH   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp LS(SINGLE_QUOTE)
+&trans     &trans         &trans         &trans         &trans      &trans      &trans      &trans                                                         &kp QUESTION
             >;
         };
 
